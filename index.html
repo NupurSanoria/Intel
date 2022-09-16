@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head><link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  
+
+</head>
+<body>
+  <div class="num">
+    <div  class="box" id="sep1" > <h4>Coronavirus Cases</h4> <h2> 616,251,706</h2></div> 
+       <div class ="box" id="sep2"> <h4>Deaths</h4><h2> 6,526,239</h2></div>  
+         <div  class="box"id="sep3"> <h4>Recovered</h4><h2>595,449,442</h2> </div>
+
+</div>
+  <div class="gone">
+<div  id="myChart" style="width:100%; max-width:600px; height:500px;">
+</div>
+<div id="myChart1" style="width:100%; max-width:600px; height:500px;">
+</div>
+
+
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+     
+
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+  ['Contry', 'Mhl'],
+  ['Italy',22114423],
+  ['France',34831399],
+  ['India',44522777],
+  ['USA',97430411],
+  ['Argentina',9697763]
+]);
+
+var options = {
+  title:'COVID TRACKER '
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+  chart.draw(data, options);
+       
+// Set Data
+ data = google.visualization.arrayToDataTable([
+  ['Price', 'Size'],
+  [50,7],[60,8],[70,8],[80,9],[90,9],[100,9],
+  [110,10],[120,11],[130,14],[140,14],[150,15]
+  ]);
+// Set Options
+var options = {
+  title: 'Daily Cases',
+  hAxis: {title: ' Days'},
+  vAxis: {title: 'Numbers'},
+  legend: 'none'
+};
+// Draw Chart
+var chart = new google.visualization.LineChart(document.getElementById('myChart1'));
+chart.draw(data, options);
+};
+
+
+
+    
+</script>
+
+</body>
+</html>
+
